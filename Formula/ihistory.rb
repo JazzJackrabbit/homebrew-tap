@@ -35,8 +35,20 @@ class Ihistory < Formula
   def install
     bin.install 'ihistory'
     bin.install_symlink 'ihistory' => 'ih'
+    (share / 'ihistory').install Dir['shell/*']
   end
 
+  def caveats
+    <<~EOS
+      Add to your shell config:
+
+      For zsh (~/.zshrc):
+        source "#{opt_share}/ihistory/ihistory.zsh"
+
+      For bash (~/.bashrc):
+        source "#{opt_share}/ihistory/ihistory.bash"
+    EOS
+  end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ihistory --version")
