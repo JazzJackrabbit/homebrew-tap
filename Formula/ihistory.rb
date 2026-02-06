@@ -5,30 +5,30 @@
 class Ihistory < Formula
   desc 'A minimal, fast, fuzzy shell history search tool'
   homepage 'https://github.com/jazzjackrabbit/ihistory'
-  version '0.1.2'
+  version 'v0.1.3'
   license 'MIT'
 
   on_macos do
     on_arm do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-aarch64-apple-darwin.tar.gz"
-      sha256 '2b8236aee41741b1e4ac26618a1773d618ea40767ad451004d3a8da9db508e43'
+      sha256 '0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5'
     end
 
     on_intel do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-x86_64-apple-darwin.tar.gz"
-      sha256 'e2dba559f885c46f7c1945132ceb23d83b955664cab25cd983422bcb5f100b13'
+      sha256 '0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5'
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 '767873880755c7da5ffc3c8027f4a6089566f89425b4692c1910cfc8d44befac'
+      sha256 '0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5'
     end
 
     on_intel do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 'e179b79d98d19c520acb2e6dbdcef819ee3db85f503c0917975419cb336ec1ad'
+      sha256 '0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5'
     end
   end
 
