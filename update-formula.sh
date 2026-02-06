@@ -16,9 +16,9 @@ if [[ ! -f "$FORMULA" ]]; then
   exit 1
 fi
 
-# Get version from arg or fetch latest
+# Get version from arg or fetch latest (strip v prefix if present)
 if [[ -n "$2" ]]; then
-  VERSION="$2"
+  VERSION="${2#v}"
 else
   VERSION=$(gh release view --repo "$REPO" --json tagName -q '.tagName' | sed 's/^v//')
 fi

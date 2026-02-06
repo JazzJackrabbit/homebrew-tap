@@ -5,43 +5,42 @@
 class Ihistory < Formula
   desc 'A minimal, fast, fuzzy shell history search tool'
   homepage 'https://github.com/jazzjackrabbit/ihistory'
-  version '0.1.3'
+  version '0.1.3_1'
   license 'MIT'
 
   on_macos do
     on_arm do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-aarch64-apple-darwin.tar.gz"
-      sha256 'f6f9542faaf9eced05bbef6267e778206a3bade53f89e2bf3889011cd7c0c7ef'
+      sha256 '085808a230315f129a14610d84213c306d9f39d178eb21acf789fc57d5415be9'
     end
 
     on_intel do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-x86_64-apple-darwin.tar.gz"
-      sha256 'a8fe2035dfffa71a96dc4a4a4eb4ea16230405afddf449fa9f2264b47ee17aef'
+      sha256 '8db15bb5ca7421b686d579c14aa94ab047b248ebbfd0243a01ffec908d6b59df'
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 '8ef64f24c5a6a25708e915c18249d99f426c3e1313d322416bc053703f500674'
+      sha256 'c127e7ca7bad2d3e21050273681a4d325854d2864451339d91a0300f4ee1ed42'
     end
 
     on_intel do
       url "https://github.com/jazzjackrabbit/ihistory/releases/download/v#{version}/ihistory-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 '185afd64cbe32639bd04d0f9d094e9b45b380911e5d1b4213839f3850e36469c'
+      sha256 '10a792f0ac2dd067b183804898dc53f9a265d6f4fa5d928078aa79c7a474bbc9'
     end
   end
 
   def install
     bin.install 'ihistory'
     bin.install_symlink 'ihistory' => 'ih'
-    (share / 'ihistory').install 'shell/ihistory.sh'
   end
 
   def caveats
     <<~EOS
-      Add to your ~/.zshrc or ~/.bashrc:
-        source "#{opt_share}/ihistory/ihistory.sh"
+      Run to set up shell integration:
+        ihistory --init
     EOS
   end
 
